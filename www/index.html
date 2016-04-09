@@ -6,7 +6,7 @@
   <title>My App</title>  
   
   <link rel="stylesheet" href="lib/onsen/css/onsenui.css">  
-  <link rel="stylesheet" type="text/css" href="lib/onsen/css/topcoat-mobile-onsen-blue.css">
+  <link rel="stylesheet" type="text/css" href="lib/onsen/css/topcoat-mobile-onsen-ios7.css">
   <link rel="stylesheet" href="styles/app.css"/> 
 
   <script src="lib/onsen/js/angular/angular.js"></script>    
@@ -23,6 +23,58 @@
       behind-page="menu.html" 
       above-page="navigator1.html">
     </ons-sliding-menu>
+
+
+
+
+<ons-tabbar>
+  <ons-tab page="home.html" label="Home" icon="ion-home" active="true"></ons-tab>
+  <ons-tab page="comments.html" label="Comments" icon="ion-chatbox-working"></ons-tab>
+  <ons-tab page="tags.html" label="Tags" icon="ion-ios-pricetag"></ons-tab>
+  <ons-tab page="settings.html" label="Settings" icon="ion-ios-cog"></ons-tab>
+</ons-tabbar>
+
+<ons-template id="home.html">
+  <ons-toolbar>
+    <div class="center">Home</div>
+  </ons-toolbar>
+
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="page1.html">
+  <ons-toolbar>
+    <div class="center">Comments</div>
+  </ons-toolbar>
+
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="page2.html">
+  <ons-toolbar>
+    <div class="center">Tags</div>
+  </ons-toolbar>
+
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="page3.html">
+  <ons-toolbar>
+    <div class="center">Feed</div>
+  </ons-toolbar>
+
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+<ons-template id="page1.html">
+  <ons-toolbar>
+    <div class="center">Settings</div>
+  </ons-toolbar>
+
+  <p style="padding-top: 100px; color: #999; text-align: center">Page Contents</p>
+</ons-template>
+
+
     
   </ons-screen>
  
