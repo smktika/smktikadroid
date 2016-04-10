@@ -13,15 +13,38 @@
 
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
-    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-blue-basic-theme.css" />
+    <link rel="stylesheet" href="lib/onsen/css/onsen-css-components-purple-theme.css" />
 
     <!-- CSP support mode (required for Windows Universal apps) -->
     <link rel="stylesheet" href="lib/angular/angular-csp.css" />
+    <script src="cordova.js"></script>
+    <script src="scripts/index.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		function onLoad()
+		{
+			  document.addEventListener("deviceready", onDeviceReady, true);
+			  navigator.splashscreen.show();
+		}
+		function exitFromApp()
+		 {
+			navigator.app.exitApp();
+		 }
+		ons.setDefaultDeviceBackButtonListener(function() {
+		  if (navigator.notification.confirm("Are you sure to close the app?",
+			function(index) {
+			  if (index === 1) { // OK button
+				navigator.app.exitApp(); // Close the app
+			  }
+			}
+		  ));
+		});
+	</script>
+
 
 
     <!-- --------------- App init --------------- -->
 
-    <title>Onsen UI Sliding Menu</title>
+    <title>SMK Tarbiyatul Islam Kawunganten</title>
 
     <script>
         angular.module('app', ['onsen']);
@@ -31,6 +54,10 @@
         .page--menu-page__background {
             background-color: #333;
         }
+        
+        .center {
+			text-align: center;
+		}
 
         .page--menu-page__content {
             color: white;
@@ -91,8 +118,7 @@
 
 <body>
     <!-- Cordova reference -->
-    <script src="cordova.js"></script>
-    <script src="scripts/index.js"></script>
+
     <!-- -->
 
     <ons-sliding-menu menu-page="menu.html" main-page="page1.html" side="left"
@@ -105,19 +131,25 @@
 
             <ons-list class="menu-list">
                 <ons-list-item class="menu-item" ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
-                    <ons-icon icon="fa-plus"></ons-icon>
-                    New Post
+                    <ons-icon icon="fa-home"></ons-icon>
+                    Profil
                 </ons-list-item>
 
                 <ons-list-item class="menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
-                    <ons-icon icon="fa-bookmark"></ons-icon>
-                    Bookmark
+                    <ons-icon icon="fa-group"></ons-icon>
+                    PTK
                 </ons-list-item>
 
-                <ons-list-item class="menu-item" ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
-                    <ons-icon icon="fa-twitter"></ons-icon>
-                    Official Twitter
+                <ons-list-item class="menu-item" ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
+                    <ons-icon icon="fa-users"></ons-icon>
+                    Siswa
                 </ons-list-item>
+
+                <ons-list-item class="menu-item" ng-click="menu.setMainPage('facebook.html', {closeMenu: true})">
+                    <ons-icon icon="fa-facebook"></ons-icon>
+                    Facebook
+                </ons-list-item>
+
             </ons-list>
 
             <br>
@@ -135,6 +167,12 @@
                 <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
                     Send feedback
                 </ons-list-item>
+
+                <ons-list-item class="menu-item" ng-click="exitFromApp();">
+                    <ons-icon icon="fa-sign-out"></ons-icon>
+                    Keluar
+                </ons-list-item>
+
             </ons-list>
         </ons-page>
     </ons-template>
@@ -147,15 +185,19 @@
                         <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                     </ons-toolbar-button>
                 </div>
-                <div class="center">Page 1</div>
+                <div class="right">
+                    <ons-toolbar-button ng-click="menu.setMainPage('end.html', {closeMenu: true})">
+                        <ons-icon icon="ion-arrow-right-a" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Profil</div>
             </ons-toolbar>
 
-            <ons-row style="margin-top: 100px; text-align: center;">
+            <ons-row style="margin-top: 5%; text-align: center;">
                 <ons-col>
-                    <ons-button modifier="light" ng-click="menu.toggleMenu()">
-                        Toggle Menu
-                    </ons-button>
-                    <p style="color: #999; font-size: 13px;">Click "Toggle Menu" to close/open menu,<br> You can also swipe the page left/right.</p>
+					<img src="icon.png"><br>
+                    <p>SMK Tarbiyatul Islam Kawunganten adalah sebuah sekolah kejuruan di Desa Kawunganten Lor, Kecamatan Kawunganten, Cilacap yang telah berdiri sejak 2007.</p>
+                    <p>Kini SMKTIKA telah membuka 3 kejuruan, antara lain Teknik Komputer dan Jaringan, Administrasi Perkantoran, dan Akuntansi.</p>
                 </ons-col>
             </ons-row>
         </ons-page>
@@ -169,7 +211,46 @@
                         <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
                     </ons-toolbar-button>
                 </div>
-                <div class="center">Page 2</div>
+                <div class="center">PTK</div>
+            </ons-toolbar>
+
+
+            <ons-row style="text-align: center;">
+                <ons-col>
+                    <h2>Pendidik dan Tenaga Kependidikan</h2>
+
+					<ons-carousel style="margin-top: 30%;" fullscreen swipeable overscrollable auto-scroll>
+					  <ons-carousel-item style="text-align: center;">
+                        <ons-row>
+							<ons-col><p><img src="img/sam.jpg" width="100px" height="100px"></p></ons-col>
+							<ons-col><p style="text-align: left;">Nama : Samsul Maarif<br>Mapel : Produktif TKJ<br>Pendidikan : Ora lulus</p>
+							<p style="text-align: left;">Mulai mengajar sejak Oktober 2014, sampe sekarang masih serind datang terlambat.</p></ons-col>
+                        </ons-row>
+					  </ons-carousel-item>
+					  <ons-carousel-item>
+                        <ons-row>
+							<ons-col><p><img src="img/toni.jpg" width="100px" height="100px"></p></ons-col>
+							<ons-col><p style="text-align: left;">Nama : Toni Diana, S.Kom.<br>Mapel : KKPI<br>Pendidikan : S1</p>
+							<p style="text-align: left;">Sebagai Wakil Kepala sekolah.</p></ons-col>
+                        </ons-row>
+					  </ons-carousel-item>
+					</ons-carousel>
+                    
+                </ons-col>
+            </ons-row>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="page3.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.toggle()">
+                        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Page 3</div>
             </ons-toolbar>
 
 
@@ -183,5 +264,73 @@
 
         </ons-page>
     </ons-template>
+
+    <ons-template id="end.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.toggle()">
+                        <ons-icon icon="ion-navicon" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">End</div>
+            </ons-toolbar>
+
+
+            <ons-row style="margin-top: 10%; text-align: center;">
+                <ons-col>
+                    <ons-button modifier="light" ng-click="menu.setMainPage('low-end.html', {closeMenu: true})">
+                        Low End
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="low-end.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('end.html', {closeMenu: true })">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Low End</div>
+            </ons-toolbar>
+
+
+            <ons-row style="margin-top: 10%; text-align: center;">
+                <ons-col>
+                    <ons-button modifier="light" ng-click="menu.setMainPage('end.html', {closeMenu: true })">
+                        Kembali
+                    </ons-button>
+                </ons-col>
+            </ons-row>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="facebook.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('end.html', {closeMenu: true })">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Facebook</div>
+            </ons-toolbar>
+
+
+            <ons-row>
+					<iframe src="http://m.facebook.com/smktika" width="100%" height="100%" name="iframe">
+					  <p>Sorry, but your browser can't display iframes <a href="#">SELFHTML</a></p>
+					</iframe>
+            </ons-row>
+
+        </ons-page>
+    </ons-template>
+
 </body>
 </html>
