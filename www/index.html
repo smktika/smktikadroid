@@ -117,9 +117,14 @@
 </head>
 
 <body>
-    <!-- Cordova reference -->
 
-    <!-- -->
+  <div ons-loading-placeholder="start.html">
+	  <i class="fa fa-spinner fa-spin center memuat"></i> Memuat...
+  </div>
+  <ons-template id="start.html">
+
+    <div>Selamat datang di aplikasi @smktika!</div>
+  </ons-template>
 
     <ons-sliding-menu menu-page="menu.html" main-page="page1.html" side="left"
                       var="menu" type="reveal" max-slide-distance="260px" swipeable="true">
