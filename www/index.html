@@ -136,13 +136,18 @@
                 </ons-list-item>
 
                 <ons-list-item class="menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
-                    <ons-icon icon="fa-group"></ons-icon>
+                    <ons-icon icon="fa-user-md"></ons-icon>
                     PTK
                 </ons-list-item>
 
                 <ons-list-item class="menu-item" ng-click="menu.setMainPage('page3.html', {closeMenu: true})">
-                    <ons-icon icon="fa-users"></ons-icon>
+                    <ons-icon icon="fa-group"></ons-icon>
                     Siswa
+                </ons-list-item>
+
+                <ons-list-item class="menu-item" ng-click="menu.setMainPage('kejuruan.html', {closeMenu: true})">
+                    <ons-icon icon="fa-book"></ons-icon>
+                    Kejuruan
                 </ons-list-item>
 
                 <ons-list-item class="menu-item" ng-click="menu.setMainPage('facebook.html', {closeMenu: true})">
@@ -155,22 +160,25 @@
             <br>
 
             <ons-list class="bottom-menu-list">
-                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
-                    Settings
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('pengaturan.html', {closeMenu: true})">
+                    <i class="fa fa-gear"></i> Settings
                     <div class="notification menu-notification">3</div>
                 </ons-list-item>
 
-                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
-                    Help
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('bantuan.html', {closeMenu: true})">
+                    <i class="fa fa-question"></i> Bantuan
                 </ons-list-item>
 
-                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('page2.html', {closeMenu: true})">
-                    Send feedback
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('saran.html', {closeMenu: true})">
+                    <i class="fa fa-send"></i> Send feedback
                 </ons-list-item>
 
-                <ons-list-item class="menu-item" ng-click="exitFromApp();">
-                    <ons-icon icon="fa-sign-out"></ons-icon>
-                    Keluar
+                <ons-list-item class="bottom-menu-item" ng-click="menu.setMainPage('tentang.html', {closeMenu: true})">
+                    <i class="fa fa-info"></i> Tentang
+                </ons-list-item>
+
+                <ons-list-item class="bottom-menu-item" ng-click="exitFromApp();">
+                    <i class="fa fa-sign-out"></i> Keluar
                 </ons-list-item>
 
             </ons-list>
@@ -311,6 +319,90 @@
         </ons-page>
     </ons-template>
 
+    <ons-template id="kejuruan.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('page1.html', {closeMenu: true })">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Kejuruan</div>
+            </ons-toolbar>
+
+				<h3 class="center">Kejuruan</h3>
+
+            <ons-col style="margin-top: 10%; text-align: center;">
+                <ons-row>
+                    <ons-button modifier="large" ng-click="menu.setMainPage('tkj.html', {closeMenu: true })">
+						<ons-ripple></ons-ripple>
+                        Teknik Komputer dan Jaringan
+                    </ons-button>
+                </ons-row>
+                <ons-row>
+                    <ons-button modifier="large" ng-click="menu.setMainPage('ak.html', {closeMenu: true })">
+                        Akuntansi
+                    </ons-button>
+                </ons-row>                
+                <ons-row>
+                    <ons-button modifier="large" ng-click="menu.setMainPage('ap.html', {closeMenu: true })">
+                        Administrasi Perkantoran
+                    </ons-button>
+                </ons-row>
+            </ons-col>
+
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="tkj.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('kejuruan.html', {closeMenu: true })">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">TKJ</div>
+            </ons-toolbar>
+
+            <h3 class="center">Teknik Komputer dan Jaringan</h3>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="ak.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('kejuruan.html', {closeMenu: true })">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">AK</div>
+            </ons-toolbar>
+
+            <h3 class="center">Akuntansi</h3>
+
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="ap.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('kejuruan.html', {closeMenu: true })">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">AP</div>
+            </ons-toolbar>
+
+            <h3 class="center">Administrasi Perkantoran</h3>
+
+        </ons-page>
+    </ons-template>
+
     <ons-template id="facebook.html">
         <ons-page>
             <ons-toolbar>
@@ -323,12 +415,98 @@
             </ons-toolbar>
 
 
-            <ons-row>
-					<iframe src="http://m.facebook.com/smktika" width="100%" height="100%" name="iframe">
-					  <p>Sorry, but your browser can't display iframes <a href="#">SELFHTML</a></p>
+					<iframe src="https://www.facebook.com/smktika" width="100%" height="100%">
+					  <p>Maaf, peramban Anda tidak mendukung iframes <a href="https://www.facebook.com/smktika" target="_blank">Facebook</a>.</p>
 					</iframe>
-            </ons-row>
 
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="tentang.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Tentang</div>
+            </ons-toolbar>
+
+              <h3 class="center">Tentang Pengembang</h3>
+            <ons-row style="margin-top: 5%; text-align: center;">
+                <ons-col>
+					
+                    <p>Aplikasi profil SMK Tarbiyatul Islam Kawunganten.</p>
+                    <p>redaksinya belum sempet nulis.</p>
+                </ons-col>
+            </ons-row>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="bantuan.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Bantuan</div>
+            </ons-toolbar>
+
+              <h3 class="center">Panduan Penggunaan</h3>
+            <ons-row style="margin-top: 5%; text-align: center;">
+                <ons-col>
+					
+                    <p>Cara menggunakan aplikasi ini ya begini.</p>
+                    <p>redaksinya belum sempet nulis.</p>
+                </ons-col>
+            </ons-row>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="pengaturan.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Pengaturan</div>
+            </ons-toolbar>
+
+              <h3 class="center">Pengaturan Aplikasi</h3>
+            <ons-row style="margin-top: 5%; text-align: center;">
+                <ons-col>
+					
+                    <p>Pengaturannya begitu.</p>
+                    <p>redaksinya belum sempet nulis.</p>
+                </ons-col>
+            </ons-row>
+        </ons-page>
+    </ons-template>
+
+    <ons-template id="saran.html">
+        <ons-page>
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button ng-click="menu.setMainPage('page1.html', {closeMenu: true})">
+                        <ons-icon icon="ion-arrow-left-c" size="28px" fixed-width="false"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Saran</div>
+            </ons-toolbar>
+
+              <h3 class="center">Ajukan saran ke pengembang</h3>
+            <ons-row style="margin-top: 5%; text-align: center;">
+                <ons-col>
+					
+                    <p>Gunakan sebuah formulir untuk mengirimkan saran.</p>
+                    <p>redaksinya belum sempet nulis.</p>
+                </ons-col>
+            </ons-row>
         </ons-page>
     </ons-template>
 

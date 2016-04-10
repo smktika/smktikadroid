@@ -969,3 +969,7 @@ ons-split-view {
   z-index: 0;
   overflow-x: hidden; 
 }
+
+ons-row {
+  margin-bottom: 5%;
+}
