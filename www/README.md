@@ -1,4 +1,0 @@
-myOnsenUIApp
-============
-
-myOnsenUIApp
